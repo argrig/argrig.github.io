@@ -7,20 +7,22 @@
   <title>Визитка</title>
   <link rel="stylesheet" href="styles.css">
   <link href="bootstrap5.2.3/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://livejs.com/live.js"></script>
+  <script src="scripts.js"></script>
 </head>
 
 <body style="background-image: url('ararat_new25.png'); background-repeat: no-repeat;">
-  <div class="container my-4">
+  <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-2 text-center mb-4 mb-sm-0">
-        <img class="img-fluid" src="cross.png" alt="Cross">
+      <div class="col-sm-2">
+        <img class="img-fluid" src="cross.png">
       </div>
-      <div class="col-12 col-sm-7 col-md-6 text-center text-sm-start text-nowrap">
-        <h2>РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ<br>
+      <div class="col-sm-7 col-md-5 text-nowrap">
+        <h1>РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ<br>
           <span style="font-size:80%">МОСКОВСКИЙ ПАТРИАРХАТ</span><br>
           <span style="font-size:60%">ЕРЕВАНСКО-АРМЯНСКАЯ ЕПАРХИЯ</span>
-        </h2>
-        <h2 class="my-4 fw-bold">ПРОТОИЕРЕЙ<br>Арсений Григорянц</h2>
+        </h1>
+        <h2 class="my-4"><b>ПРОТОИЕРЕЙ<br>Арсений Григорянц</b></h2>
         <h3>
           Секретарь епархии<br>
           Благочинный Ереванского округа<br>
@@ -28,17 +30,17 @@
           Председатель БОО "Русский народный собор" в Армении
         </h3>
         <h4 class="my-4">
-          <img src="tg24.png" alt="Telegram">
+          <img src="tg24.png"> 
           <a class="link-dark" href="https://t.me/argrig7">https://t.me/argrig7</a><br>
-          <img src="phone24.png" alt="Phone"> +374 94 888 654<br>
+          <img src="phone24.png"> +374 94 888 654<br>
         </h4>
       </div>
-      <div class="col-12 col-sm-3 text-center">
-        <img class="img-fluid" src="me_cartoon_transparent.png" alt="Cartoon Image">
+      <div class="col">
+        <img class="img-fluid" src="me_cartoon_transparent.png">
       </div>
-    </div>
+    </div> 
   </div>
-  <script src="bootstrap5.2.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
