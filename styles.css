@@ -12,6 +12,7 @@
   --line: #d9d4c7;
   --focus: #f0b429;
   --flip-duration: 0.8s;
+  --bar-h: 3.25rem;           /* height of the sticky controls bar */
 }
 
 html { scroll-behavior: smooth; }
@@ -43,7 +44,15 @@ body {
 }
 .seg-wrap { display: inline-flex; align-items: center; gap: 0.5rem; }
 .seg-label { font-size: 0.85rem; color: var(--muted); }
-@media (max-width: 479px) { .seg-label { display: none; } }
+@media (max-width: 575.98px) {         /* keep both toggles on one line */
+  .controls { flex-wrap: nowrap; gap: 0.4rem; padding: 0.4rem 0.4rem; }
+  .seg-label { display: none; }
+  .seg a { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
+  .seg__icon { margin-right: 0.25em; }
+}
+@media (max-width: 359.98px) {
+  .seg a { padding: 0.35rem 0.45rem; font-size: 0.72rem; }
+}
 
 .seg {
   display: inline-flex;
@@ -108,6 +117,21 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Hero — name / positions / contacts. On phones it fills the first screen so the
+   card reads without scrolling; interests, publications etc. start below the fold.
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - var(--bar-h) - 3rem);
+    min-height: calc(100svh - var(--bar-h) - 3rem);
+  }
+  .hero > .row { width: 100%; }
+}
+
+/* --------------------------------------------------------------------------
    Priest side (front) — keeps the original Bootstrap grid
    -------------------------------------------------------------------------- */
 .priest__text { overflow-wrap: anywhere; }
@@ -120,11 +144,15 @@ body {
 .priest__contacts img { vertical-align: middle; }
 .priest__photo { max-height: 70vh; width: auto; }
 
-@media (max-height: 500px) {           /* phones in landscape: keep text on screen */
-  .priest .img-fluid { max-height: 45vh; width: auto; }
-}
-@media (max-width: 575.98px) {         /* phones in portrait: stacked columns — keep images modest */
-  .priest .img-fluid { max-height: min(38vh, 320px); width: auto; }
+@media (max-width: 575.98px) {         /* phones in portrait: cross and photo side by side, compact type */
+  .priest .container { margin-top: 0.5rem !important; }
+  .priest .img-fluid, .priest__photo { max-height: 21vh; width: auto; }
+  .priest__org { font-size: clamp(0.95rem, 4.2vw, 1.3rem); }
+  .priest__name { font-size: clamp(1.1rem, 5vw, 1.6rem); margin-top: 0.75rem !important; margin-bottom: 0.75rem !important; }
+  .priest__positions { font-size: clamp(0.85rem, 3.5vw, 1.05rem); line-height: 1.3; }
+  .priest__contacts { font-size: clamp(0.9rem, 3.7vw, 1.1rem); line-height: 1.6; margin-top: 0.75rem !important; margin-bottom: 0.5rem !important; }
+  .pubs--priest { padding: 0.75rem 0.85rem; }
+  .pub-list { padding-left: 1.25rem; }
 }
 
 /* --------------------------------------------------------------------------
@@ -258,8 +286,15 @@ body {
 }
 .math__id { flex: 1 1 18rem; min-width: 0; order: 1; }
 @media (max-width: 575.98px) {
-  .math__head { justify-content: center; }
-  .math__photo { margin: 0 auto; }
+  .math__panel { width: calc(100% - 0.75rem); padding: 0.9rem 0.85rem; border-radius: 0.75rem; }
+  .math__head { flex-wrap: nowrap; align-items: center; gap: 0.75rem; }
+  .math__photo { width: min(28vw, 7rem); margin-left: auto; }
+  .math__id { flex: 1 1 auto; }
+  .math h1 { font-size: clamp(1.25rem, 5.2vw, 1.7rem); }
+  .math__degree { font-size: 0.95rem; }
+  .math__affil { font-size: 0.9rem; }
+  .math h2 { margin-top: 1.25rem; }
+  .contacts { gap: 0.4rem 1rem; }
 }
 .math h1 {
   font-family: Georgia, "Times New Roman", serif;
@@ -310,3 +345,33 @@ body {
    No-JS fallback: show the Russian front side as a plain page
    -------------------------------------------------------------------------- */
 .nojs { text-align: center; color: var(--muted); padding: 0.5rem; }
+
+/* --------------------------------------------------------------------------
+   Landscape phones — kept last so these overrides win over the section rules above
+   -------------------------------------------------------------------------- */
+/* phones in landscape: everything essential still on one screen */
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - var(--bar-h) - 1.5rem);
+    min-height: calc(100svh - var(--bar-h) - 1.5rem);
+  }
+  .hero > .row { width: 100%; }
+  .scene { padding-top: 0.4rem; }
+  .priest .container { margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; }
+  .priest .img-fluid, .priest__photo { max-height: 34vh; width: auto; }
+  .priest__org { font-size: clamp(0.9rem, 1.6vw, 1.15rem); }
+  .priest__name { font-size: clamp(1rem, 2vw, 1.35rem); margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; }
+  .priest__positions { font-size: clamp(0.78rem, 1.3vw, 0.95rem); line-height: 1.25; }
+  .priest__contacts { font-size: clamp(0.8rem, 1.35vw, 1rem); line-height: 1.45; margin-top: 0.4rem !important; margin-bottom: 0.2rem !important; }
+  .math__panel { padding: 0.6rem 1rem; }
+  .math__photo { width: min(13vw, 5.5rem); }
+  .math__head { gap: 0.5rem 1rem; margin-bottom: 0.25rem; }
+  .math h1 { font-size: clamp(1.25rem, 2.6vw, 1.7rem); margin-bottom: 0.2rem; }
+  .math__degree { font-size: 0.9rem; margin-bottom: 0.15rem; }
+  .math__affil { font-size: 0.85rem; }
+  .math h2 { margin-top: 0.6rem; font-size: 1.05rem; }
+  .contacts { font-size: 0.9rem; gap: 0.25rem 1.25rem; }
+}

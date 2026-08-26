@@ -7,7 +7,7 @@
   <title>Протоиерей Арсений Григорянц</title>
   <meta name="description" content="Визитка: протоиерей Арсений Григорянц (Ереван) / Григорянц Армен Артемович, математик, филиал МГУ имени М.В. Ломоносова в Ереване">
   <link href="bootstrap5.2.3/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
   <noscript>
     <style>
       .card3d { display: block; }
@@ -44,11 +44,12 @@
       <!-- ===== Front: priest ===== -->
       <section class="card-face card-front priest" id="face-priest">
         <div class="container my-4">
-          <div class="row">
-            <div class="col-12 col-sm-2 text-center mb-4 mb-sm-0">
+          <div class="hero">
+          <div class="row align-items-center">
+            <div class="col-5 col-sm-2 order-1 text-center mb-2 mb-sm-0">
               <img class="img-fluid" src="cross.png" data-i18n-alt="p.alt.cross" alt="Православный крест">
             </div>
-            <div class="col-12 col-sm-7 col-md-6 text-center text-sm-start priest__text">
+            <div class="col-12 col-sm-7 col-md-6 order-3 order-sm-2 text-center text-sm-start priest__text">
               <h2 class="priest__org">
                 <span data-i18n="p.church">РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ</span><br>
                 <span class="priest__org-2" data-i18n="p.patriarchate">МОСКОВСКИЙ ПАТРИАРХАТ</span><br>
@@ -73,9 +74,10 @@
                 <a class="link-dark" href="mailto:ar.grig8@gmail.com">ar.grig8@gmail.com</a>
               </h4>
             </div>
-            <div class="col-12 col-sm-3 text-center">
+            <div class="col-7 col-sm-3 order-2 order-sm-3 text-center">
               <img class="img-fluid priest__photo" src="me-real.webp" data-i18n-alt="p.alt.photo" alt="Протоиерей Арсений Григорянц">
             </div>
+          </div>
           </div>
 
           <section class="pubs pubs--priest" aria-labelledby="priest-pubs-h">
@@ -92,6 +94,7 @@
       <!-- ===== Back: mathematician ===== -->
       <section class="card-face card-back math" id="face-math" aria-hidden="true">
         <div class="math__panel">
+          <div class="hero">
           <header class="math__head">
             <div class="math__id">
               <h1 data-i18n="m.name">Григорянц Армен Артемович</h1>
@@ -104,11 +107,6 @@
             <img class="math__photo" src="me_cartoon_transparent.png" data-i18n-alt="m.alt.photo" alt="Григорянц Армен Артемович">
           </header>
 
-          <section aria-labelledby="m-int-h">
-            <h2 id="m-int-h" data-i18n="m.interests.h">Научные интересы</h2>
-            <ul class="chips" id="math-interests"></ul>
-          </section>
-
           <section aria-labelledby="m-c-h">
             <h2 id="m-c-h" data-i18n="m.contacts.h">Контакты</h2>
             <ul class="contacts">
@@ -116,6 +114,13 @@
               <li><img src="phone24.png" width="24" height="24" data-i18n-alt="c.phone" alt="Телефон"><a href="tel:+37494888654">+374 94 888 654</a></li>
               <li><img src="email24.png" width="24" height="24" data-i18n-alt="c.email" alt="Электронная почта"><a href="mailto:ar.grig7@gmail.com">ar.grig7@gmail.com</a></li>
             </ul>
+          </section>
+
+          </div>
+
+          <section aria-labelledby="m-int-h">
+            <h2 id="m-int-h" data-i18n="m.interests.h">Научные интересы</h2>
+            <ul class="chips" id="math-interests"></ul>
           </section>
 
           <section aria-labelledby="m-p-h">
@@ -145,9 +150,9 @@
   </main>
 
   <script src="bootstrap5.2.3/js/bootstrap.bundle.min.js"></script>
-  <script src="i18n.js"></script>
-  <script src="publications.js"></script>
-  <script src="app.js"></script>
+  <script src="i18n.js?v=2"></script>
+  <script src="publications.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 
 </html>
