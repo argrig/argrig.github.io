@@ -4,43 +4,150 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Визитка</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Протоиерей Арсений Григорянц</title>
+  <meta name="description" content="Визитка: протоиерей Арсений Григорянц (Ереван) / Григорянц Армен Артемович, математик, филиал МГУ имени М.В. Ломоносова в Ереване">
   <link href="bootstrap5.2.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>
+      .card3d { display: block; }
+      .card-back { transform: none; }
+      .card-face { position: static; }
+    </style>
+  </noscript>
 </head>
 
-<body style="background-image: url('ararat_new25.png'); background-repeat: no-repeat;">
-  <div class="container my-4">
-    <div class="row">
-      <div class="col-12 col-sm-2 text-center mb-4 mb-sm-0">
-        <img class="img-fluid" src="cross.png" alt="Cross">
+<body>
+  <!-- ===== Controls: which side, which language ===== -->
+  <header class="controls">
+    <nav class="seg-wrap" data-i18n-aria="ctl.persona" aria-label="Сторона визитки">
+      <span class="seg-label" data-i18n="ctl.side">Сторона:</span>
+      <div class="seg">
+        <a data-persona="priest" href="#/priest/ru"><span class="seg__icon" aria-hidden="true">☦</span><span data-i18n="ctl.priest">Священник</span></a>
+        <a data-persona="math" href="#/math/ru"><span class="seg__icon" aria-hidden="true">∑</span><span data-i18n="ctl.math">Математик</span></a>
       </div>
-      <div class="col-12 col-sm-7 col-md-6 text-center text-sm-start text-nowrap">
-        <h2>РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ<br>
-          <span style="font-size:80%">МОСКОВСКИЙ ПАТРИАРХАТ</span><br>
-          <span style="font-size:60%">ЕРЕВАНСКО-АРМЯНСКАЯ ЕПАРХИЯ</span>
-        </h2>
-        <h2 class="my-4 fw-bold">ПРОТОИЕРЕЙ<br>Арсений Григорянц</h2>
-        <h3>
-          Секретарь епархии<br>
-          Благочинный Ереванского округа<br>
-          Настоятель Покровского храма г. Еревана<br>
-          Председатель БОО "Русский народный собор" в Армении
-        </h3>
-        <h4 class="my-4">
-          <img src="tg24.png" alt="Telegram">
-          <a class="link-dark" href="https://t.me/argrig7">https://t.me/argrig7</a><br>
-          <img src="phone24.png" alt="Phone"> +374 94 888 654<br>
-          <img src="email24.png" alt="Email">
-          <a class="link-dark" href="mailto:ar.grig8@gmail.com">ar.grig8@gmail.com</a><br>
-        </h4>
+    </nav>
+    <nav class="seg-wrap" data-i18n-aria="ctl.lang" aria-label="Язык">
+      <span class="seg-label" data-i18n="ctl.language">Язык:</span>
+      <div class="seg">
+        <a data-lang="ru" href="#/priest/ru" lang="ru">RU</a>
+        <a data-lang="en" href="#/priest/en" lang="en">EN</a>
       </div>
-      <div class="col-12 col-sm-3 text-center">
-        <img class="img-fluid" src="me_cartoon_transparent.png" alt="Cartoon Image">
-      </div>
+    </nav>
+  </header>
+
+  <noscript><p class="nojs">Для переворота визитки и смены языка нужен JavaScript. / JavaScript is required to flip the card and switch the language.</p></noscript>
+
+  <main class="scene">
+    <div id="card" class="card3d">
+
+      <!-- ===== Front: priest ===== -->
+      <section class="card-face card-front priest" id="face-priest">
+        <div class="container my-4">
+          <div class="row">
+            <div class="col-12 col-sm-2 text-center mb-4 mb-sm-0">
+              <img class="img-fluid" src="cross.png" data-i18n-alt="p.alt.cross" alt="Православный крест">
+            </div>
+            <div class="col-12 col-sm-7 col-md-6 text-center text-sm-start priest__text">
+              <h2 class="priest__org">
+                <span data-i18n="p.church">РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ</span><br>
+                <span class="priest__org-2" data-i18n="p.patriarchate">МОСКОВСКИЙ ПАТРИАРХАТ</span><br>
+                <span class="priest__org-3" data-i18n="p.diocese">ЕРЕВАНСКО-АРМЯНСКАЯ ЕПАРХИЯ</span>
+              </h2>
+              <h2 class="my-4 fw-bold priest__name">
+                <span data-i18n="p.rank">ПРОТОИЕРЕЙ</span><br>
+                <span data-i18n="p.name">Арсений Григорянц</span>
+              </h2>
+              <h3 class="priest__positions">
+                <span data-i18n="p.pos1">Секретарь епархии</span><br>
+                <span data-i18n="p.pos2">Благочинный Ереванского округа</span><br>
+                <span data-i18n="p.pos3">Настоятель Покровского храма г. Еревана</span><br>
+                <span data-i18n="p.pos4">Председатель БОО "Русский народный собор" в Армении</span>
+              </h3>
+              <h4 class="my-4 priest__contacts">
+                <img src="tg24.png" width="24" height="24" data-i18n-alt="c.tg" alt="Telegram">
+                <a class="link-dark" href="https://t.me/argrig7">https://t.me/argrig7</a><br>
+                <img src="phone24.png" width="24" height="24" data-i18n-alt="c.phone" alt="Телефон">
+                <a class="link-dark" href="tel:+37494888654">+374 94 888 654</a><br>
+                <img src="email24.png" width="24" height="24" data-i18n-alt="c.email" alt="Электронная почта">
+                <a class="link-dark" href="mailto:ar.grig8@gmail.com">ar.grig8@gmail.com</a>
+              </h4>
+            </div>
+            <div class="col-12 col-sm-3 text-center">
+              <img class="img-fluid priest__photo" src="me-real.webp" data-i18n-alt="p.alt.photo" alt="Протоиерей Арсений Григорянц">
+            </div>
+          </div>
+
+          <section class="pubs pubs--priest" aria-labelledby="priest-pubs-h">
+            <h2 id="priest-pubs-h" class="pubs__h" data-i18n="p.pubs.h">Доклады и публикации</h2>
+            <div id="priest-pubs"></div>
+          </section>
+
+          <p class="flip-link-wrap">
+            <a class="flip-link" data-persona="math" href="#/math/ru" data-i18n="ctl.flip">Перевернуть ↻</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== Back: mathematician ===== -->
+      <section class="card-face card-back math" id="face-math" aria-hidden="true">
+        <div class="math__panel">
+          <header class="math__head">
+            <div class="math__id">
+              <h1 data-i18n="m.name">Григорянц Армен Артемович</h1>
+              <p class="math__degree" data-i18n="m.degree">Кандидат физико-математических наук</p>
+              <p class="math__affil">
+                <span data-i18n="m.affil">Филиал МГУ имени М.В. Ломоносова в городе Ереване</span><br>
+                <span class="math__addr" data-i18n="m.addr">Республика Армения, Ереван, ул. Вардананц, 17</span>
+              </p>
+            </div>
+            <img class="math__photo" src="me_cartoon_transparent.png" data-i18n-alt="m.alt.photo" alt="Григорянц Армен Артемович">
+          </header>
+
+          <section aria-labelledby="m-int-h">
+            <h2 id="m-int-h" data-i18n="m.interests.h">Научные интересы</h2>
+            <ul class="chips" id="math-interests"></ul>
+          </section>
+
+          <section aria-labelledby="m-c-h">
+            <h2 id="m-c-h" data-i18n="m.contacts.h">Контакты</h2>
+            <ul class="contacts">
+              <li><img src="tg24.png" width="24" height="24" data-i18n-alt="c.tg" alt="Telegram"><a href="https://t.me/argrig7">https://t.me/argrig7</a></li>
+              <li><img src="phone24.png" width="24" height="24" data-i18n-alt="c.phone" alt="Телефон"><a href="tel:+37494888654">+374 94 888 654</a></li>
+              <li><img src="email24.png" width="24" height="24" data-i18n-alt="c.email" alt="Электронная почта"><a href="mailto:ar.grig7@gmail.com">ar.grig7@gmail.com</a></li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="m-p-h">
+            <h2 id="m-p-h" data-i18n="m.profiles.h">Профили в базах данных</h2>
+            <ul class="profiles">
+              <li><a href="https://www.mathnet.ru/rus/person34113" target="_blank" rel="noopener">Math-Net.Ru</a></li>
+              <li><a href="https://zbmath.org/?q=au%3AGrigoryants%2C+A" target="_blank" rel="noopener">zbMATH Open</a></li>
+              <li><a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/641320" target="_blank" rel="noopener">MathSciNet</a></li>
+              <li><a href="https://istina.msu.ru/workers/178258660/all/" target="_blank" rel="noopener">ИСТИНА (МГУ)</a></li>
+              <li><a href="https://arxiv.org/a/grigoryants_a_1" target="_blank" rel="noopener">arXiv</a></li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="m-pub-h">
+            <h2 id="m-pub-h" data-i18n="m.pubs.h">Публикации</h2>
+            <p class="legend" data-i18n="m.pubs.legend"></p>
+            <div id="math-pubs"></div>
+          </section>
+
+          <p class="flip-link-wrap">
+            <a class="flip-link" data-persona="priest" href="#/priest/ru" data-i18n="ctl.flip">Перевернуть ↻</a>
+          </p>
+        </div>
+      </section>
+
     </div>
-  </div>
+  </main>
+
   <script src="bootstrap5.2.3/js/bootstrap.bundle.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="publications.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

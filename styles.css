@@ -1,0 +1,312 @@
+/* ==========================================================================
+   Two-sided business card: priest (front) / mathematician (back)
+   Bootstrap 5.2.3 is loaded before this file; everything here is additive.
+   ========================================================================== */
+
+:root {
+  --accent: #0b5c5c;          /* deep teal, a nod to the old academic site */
+  --accent-soft: rgba(11, 92, 92, 0.1);
+  --ink: #1d2327;
+  --muted: #5b6770;
+  --paper: rgba(255, 253, 248, 0.72);   /* translucent: the Ararat background stays visible */
+  --line: #d9d4c7;
+  --focus: #f0b429;
+  --flip-duration: 0.8s;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff url("ararat_new25.png") no-repeat left top;
+  background-size: min(815px, 100vw) auto;   /* natural size on desktop, shrinks on phones */
+}
+
+/* --------------------------------------------------------------------------
+   Controls bar (sticky, always visible)
+   -------------------------------------------------------------------------- */
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.seg-wrap { display: inline-flex; align-items: center; gap: 0.5rem; }
+.seg-label { font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 479px) { .seg-label { display: none; } }
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+.seg a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: clamp(0.85rem, 0.75rem + 0.5vw, 1rem);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+.seg a + a { border-left: 1px solid var(--accent); }
+.seg a:hover { background: var(--accent-soft); }
+.seg a[aria-current="true"] { background: var(--accent); color: #fff; }
+.seg a:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.seg__icon { margin-right: 0.35em; font-size: 1.1em; line-height: 1; }
+
+/* --------------------------------------------------------------------------
+   3D flip
+   -------------------------------------------------------------------------- */
+.scene {
+  perspective: 1600px;
+  padding: clamp(0.5rem, 2vw, 1.5rem) 0 2.5rem;
+}
+.card3d {
+  position: relative;
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform var(--flip-duration) cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.card3d.no-transition { transition: none !important; }
+.card3d.is-flipped { transform: rotateY(180deg); }
+
+.card-face {
+  grid-area: 1 / 1;          /* both faces stack in the same cell → card is as tall as the taller face */
+  min-width: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-back { transform: rotateY(180deg); }
+
+/* after the turn the inactive face leaves the flow so the card shrinks to the visible one */
+.card-face.is-hidden {
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card3d { transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   Priest side (front) — keeps the original Bootstrap grid
+   -------------------------------------------------------------------------- */
+.priest__text { overflow-wrap: anywhere; }
+.priest__org { font-size: clamp(1.25rem, 1rem + 1.4vw, 2rem); line-height: 1.15; }
+.priest__org-2 { font-size: 80%; }
+.priest__org-3 { font-size: 60%; }
+.priest__name { font-size: clamp(1.3rem, 1rem + 1.6vw, 2rem); }
+.priest__positions { font-size: clamp(1rem, 0.9rem + 0.7vw, 1.5rem); line-height: 1.35; }
+.priest__contacts { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem); line-height: 1.7; }
+.priest__contacts img { vertical-align: middle; }
+.priest__photo { max-height: 70vh; width: auto; }
+
+@media (max-height: 500px) {           /* phones in landscape: keep text on screen */
+  .priest .img-fluid { max-height: 45vh; width: auto; }
+}
+@media (max-width: 575.98px) {         /* phones in portrait: stacked columns — keep images modest */
+  .priest .img-fluid { max-height: min(38vh, 320px); width: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   Publication blocks (shared)
+   -------------------------------------------------------------------------- */
+.pubs { margin-top: 1.5rem; }
+.pubs--priest {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.9rem, 2.5vw, 1.75rem);
+}
+.pubs__h {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.25rem;
+  margin: 0 0 0.75rem;
+}
+.pubs__group {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 1.25rem 0 0.5rem;
+}
+.pub-list { padding-left: 1.5rem; margin: 0; }
+.pub { margin: 0 0 0.9rem; line-height: 1.4; }
+.pub__title { font-weight: 600; }
+.pub__title .ix { margin-left: 0.5em; vertical-align: 0.05em; }
+.pub__title-link { color: inherit; text-decoration: underline; text-decoration-color: rgba(11, 92, 92, 0.4); }
+.pub__title-link:hover { color: var(--accent); }
+.pub__year {
+  display: inline-block;
+  min-width: 3em;
+  margin-right: 0.5em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.pub__venue { }
+.pub__meta { color: var(--muted); font-size: 0.9em; }
+.pub__translation { font-size: 0.92em; font-style: italic; color: #2f3b44; }
+.pub__label { font-weight: 600; font-style: normal; color: var(--muted); }
+.pub__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-top: 0.3rem;
+}
+.pub__link { font-size: 0.85em; }
+.pubs__empty {
+  color: var(--muted);
+  font-style: italic;
+  border: 1px dashed var(--line);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+.legend { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.75rem; }
+
+/* index badges */
+.ix {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(11, 92, 92, 0.3);
+  background: #e6f0f0;
+  color: var(--accent);
+  cursor: default;
+}
+.ix--kind { background: #f3f1ea; color: #5b5330; border-color: #d8d1b4; text-transform: none; font-weight: 600; }
+.ix--scopus { background: #fdece6; color: #b3410f; border-color: #e6a98f; }
+.ix--wos { background: #efe8f7; color: #5a2d91; border-color: #c2add8; }
+.ix--rsci { background: #e9f1e6; color: #2f6b1f; border-color: #a9c9a0; }
+.ix--mathscinet { background: #f7efd9; color: #7a5a00; border-color: #e0c98a; }
+.ix--zbmath { background: #e6eef8; color: #1f4e8c; border-color: #a9c0e0; }
+
+.flip-link-wrap { text-align: center; margin: 1.5rem 0 0; }
+.flip-link {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  background: #fff;
+}
+.flip-link:hover { background: var(--accent); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Mathematician side (back) — modern, clean, academic
+   -------------------------------------------------------------------------- */
+.math {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.math__panel {
+  box-sizing: border-box;
+  width: min(62rem, 100% - 1.5rem);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.math__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.math__photo {                     /* transparent cartoon on the right, like the photo on the front */
+  width: clamp(7rem, 20vw, 12rem);
+  height: auto;
+  max-width: 100%;
+  flex: none;
+  order: 2;
+  margin-left: auto;
+}
+.math__id { flex: 1 1 18rem; min-width: 0; order: 1; }
+@media (max-width: 575.98px) {
+  .math__head { justify-content: center; }
+  .math__photo { margin: 0 auto; }
+}
+.math h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+.math__degree { font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem); font-weight: 600; margin: 0 0 0.25rem; }
+.math__affil { color: var(--muted); margin: 0; line-height: 1.4; }
+.math__addr { font-size: 0.9em; }
+
+.math h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.15rem, 1rem + 0.9vw, 1.5rem);
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.25rem;
+  margin: 1.75rem 0 0.75rem;
+}
+.math h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0; }
+.chip {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.92rem;
+}
+
+.contacts, .profiles { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.contacts li { overflow-wrap: anywhere; }
+.contacts img { vertical-align: middle; margin-right: 0.35rem; }
+.contacts a, .profiles a { color: var(--ink); }
+.contacts a:hover, .profiles a:hover { color: var(--accent); }
+.profiles a { text-decoration: none; border-bottom: 1px solid rgba(11, 92, 92, 0.4); }
+.profiles li::before { content: "▸ "; color: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   No-JS fallback: show the Russian front side as a plain page
+   -------------------------------------------------------------------------- */
+.nojs { text-align: center; color: var(--muted); padding: 0.5rem; }
