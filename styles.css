@@ -143,6 +143,8 @@ body {
 .card-contacts { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem); line-height: 1.7; overflow-wrap: anywhere; }
 .card-contacts img { vertical-align: middle; }
 .hero__symbol { max-height: 42vh; width: auto; }
+/* the fractal is a solid mark — keep it quiet so it does not pull focus from the text */
+.math .hero__symbol { opacity: 0.38; filter: grayscale(1); }
 .hero__portrait { max-height: 55vh; width: auto; }
 
 @media (max-width: 575.98px) {         /* phones in portrait: cross and photo side by side, compact type */
