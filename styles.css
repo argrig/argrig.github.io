@@ -140,18 +140,21 @@ body {
 .priest__org-3 { font-size: 60%; }
 .priest__name { font-size: clamp(1.3rem, 1rem + 1.6vw, 2rem); }
 .priest__positions { font-size: clamp(1rem, 0.9rem + 0.7vw, 1.5rem); line-height: 1.35; }
-.priest__contacts { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem); line-height: 1.7; }
-.priest__contacts img { vertical-align: middle; }
+.card-contacts { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem); line-height: 1.7; overflow-wrap: anywhere; }
+.card-contacts img { vertical-align: middle; }
 .priest__photo { max-height: 70vh; width: auto; }
 
 @media (max-width: 575.98px) {         /* phones in portrait: cross and photo side by side, compact type */
-  .priest .container { margin-top: 0.5rem !important; }
-  .priest .img-fluid, .priest__photo { max-height: 21vh; width: auto; }
+  .card-face .container { margin-top: 0.5rem !important; }
+  .hero .img-fluid { max-height: 21vh; width: auto; }
   .priest__org { font-size: clamp(0.95rem, 4.2vw, 1.3rem); }
   .priest__name { font-size: clamp(1.1rem, 5vw, 1.6rem); margin-top: 0.75rem !important; margin-bottom: 0.75rem !important; }
   .priest__positions { font-size: clamp(0.85rem, 3.5vw, 1.05rem); line-height: 1.3; }
-  .priest__contacts { font-size: clamp(0.9rem, 3.7vw, 1.1rem); line-height: 1.6; margin-top: 0.75rem !important; margin-bottom: 0.5rem !important; }
-  .pubs--priest { padding: 0.75rem 0.85rem; }
+  .card-contacts { font-size: clamp(0.9rem, 3.7vw, 1.1rem); line-height: 1.6; margin-top: 0.75rem !important; margin-bottom: 0.5rem !important; }
+  .panel { padding: 0.75rem 0.85rem; }
+  .math__name { font-size: clamp(1.1rem, 4.8vw, 1.6rem); }
+  .math__degree { font-size: clamp(0.9rem, 3.7vw, 1.1rem); }
+  .math__affil { font-size: clamp(0.8rem, 3.3vw, 1rem); }
   .pub-list { padding-left: 1.25rem; }
 }
 
@@ -159,13 +162,14 @@ body {
    Publication blocks (shared)
    -------------------------------------------------------------------------- */
 .pubs { margin-top: 1.5rem; }
-.pubs--priest {
+.panel {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
   border-radius: 0.75rem;
   padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.9rem, 2.5vw, 1.75rem);
 }
-.pubs__h {
+.pubs__h,
+.panel__h {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
   color: var(--accent);
@@ -258,53 +262,19 @@ body {
 .math {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-.math__panel {
-  box-sizing: border-box;
-  width: min(62rem, 100% - 1.5rem);
-  margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2.5rem);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-.math__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.75rem;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-.math__photo {                     /* transparent cartoon on the right, like the photo on the front */
-  width: clamp(7rem, 20vw, 12rem);
-  height: auto;
-  max-width: 100%;
-  flex: none;
-  order: 2;
-  margin-left: auto;
-}
-.math__id { flex: 1 1 18rem; min-width: 0; order: 1; }
-@media (max-width: 575.98px) {
-  .math__panel { width: calc(100% - 0.75rem); padding: 0.9rem 0.85rem; border-radius: 0.75rem; }
-  .math__head { flex-wrap: nowrap; align-items: center; gap: 0.75rem; }
-  .math__photo { width: min(28vw, 7rem); margin-left: auto; }
-  .math__id { flex: 1 1 auto; }
-  .math h1 { font-size: clamp(1.25rem, 5.2vw, 1.7rem); }
-  .math__degree { font-size: 0.95rem; }
-  .math__affil { font-size: 0.9rem; }
-  .math h2 { margin-top: 1.25rem; }
-  .contacts { gap: 0.4rem 1rem; }
-}
-.math h1 {
+.math__text { overflow-wrap: anywhere; }
+.math__name {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.5rem);
+  font-size: clamp(1.35rem, 1rem + 1.9vw, 2.4rem);
   line-height: 1.15;
   color: var(--accent);
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.5rem;
 }
-.math__degree { font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem); font-weight: 600; margin: 0 0 0.25rem; }
-.math__affil { color: var(--muted); margin: 0; line-height: 1.4; }
+.math__photo { max-width: min(100%, 20rem); max-height: 55vh; width: auto; margin-inline: auto; }
+.math__details { margin-top: 1.5rem; }
+.math__details > section + section { margin-top: 0.5rem; }
+.math__degree { font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.4rem); font-weight: 700; margin: 0 0 0.35rem; }
+.math__affil { font-size: clamp(0.95rem, 0.9rem + 0.4vw, 1.15rem); color: var(--muted); margin: 0; line-height: 1.4; }
 .math__addr { font-size: 0.9em; }
 
 .math h2 {
@@ -333,11 +303,9 @@ body {
   font-size: 0.92rem;
 }
 
-.contacts, .profiles { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
-.contacts li { overflow-wrap: anywhere; }
-.contacts img { vertical-align: middle; margin-right: 0.35rem; }
-.contacts a, .profiles a { color: var(--ink); }
-.contacts a:hover, .profiles a:hover { color: var(--accent); }
+.profiles { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.profiles a { color: var(--ink); }
+.profiles a:hover { color: var(--accent); }
 .profiles a { text-decoration: none; border-bottom: 1px solid rgba(11, 92, 92, 0.4); }
 .profiles li::before { content: "▸ "; color: var(--accent); }
 
@@ -360,18 +328,14 @@ body {
   }
   .hero > .row { width: 100%; }
   .scene { padding-top: 0.4rem; }
-  .priest .container { margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; }
-  .priest .img-fluid, .priest__photo { max-height: 34vh; width: auto; }
+  .card-face .container { margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; }
+  .hero .img-fluid { max-height: 34vh; width: auto; }
   .priest__org { font-size: clamp(0.9rem, 1.6vw, 1.15rem); }
   .priest__name { font-size: clamp(1rem, 2vw, 1.35rem); margin-top: 0.4rem !important; margin-bottom: 0.4rem !important; }
   .priest__positions { font-size: clamp(0.78rem, 1.3vw, 0.95rem); line-height: 1.25; }
-  .priest__contacts { font-size: clamp(0.8rem, 1.35vw, 1rem); line-height: 1.45; margin-top: 0.4rem !important; margin-bottom: 0.2rem !important; }
-  .math__panel { padding: 0.6rem 1rem; }
-  .math__photo { width: min(13vw, 5.5rem); }
-  .math__head { gap: 0.5rem 1rem; margin-bottom: 0.25rem; }
-  .math h1 { font-size: clamp(1.25rem, 2.6vw, 1.7rem); margin-bottom: 0.2rem; }
-  .math__degree { font-size: 0.9rem; margin-bottom: 0.15rem; }
-  .math__affil { font-size: 0.85rem; }
+  .card-contacts { font-size: clamp(0.8rem, 1.35vw, 1rem); line-height: 1.45; margin-top: 0.4rem !important; margin-bottom: 0.2rem !important; }
+  .math__name { font-size: clamp(1.15rem, 2.4vw, 1.6rem); margin-bottom: 0.2rem; }
+  .math__degree { font-size: clamp(0.85rem, 1.5vw, 1.05rem); margin-bottom: 0.15rem; }
+  .math__affil { font-size: clamp(0.78rem, 1.3vw, 0.95rem); }
   .math h2 { margin-top: 0.6rem; font-size: 1.05rem; }
-  .contacts { font-size: 0.9rem; gap: 0.25rem 1.25rem; }
 }
