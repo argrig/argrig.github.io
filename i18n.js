@@ -24,6 +24,7 @@ window.I18N = {
     'c.tg': 'Telegram',
     'c.phone': 'Телефон',
     'c.email': 'Электронная почта',
+    'c.youtube': 'YouTube',
 
     /* priest side */
     'p.church': 'РУССКАЯ ПРАВОСЛАВНАЯ ЦЕРКОВЬ',
@@ -101,6 +102,7 @@ window.I18N = {
     'c.tg': 'Telegram',
     'c.phone': 'Phone',
     'c.email': 'E-mail',
+    'c.youtube': 'YouTube',
 
     /* priest side */
     'p.church': 'RUSSIAN ORTHODOX CHURCH',
