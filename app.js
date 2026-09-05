@@ -85,6 +85,7 @@
       e.year ? el('span', { class: 'pub__year' }, e.year) : null,
       el('span', null, e.title)
     ]));
+    if (lang !== 'ru' && e.titleEn) li.appendChild(el('div', { class: 'pub__translation' }, e.titleEn));
     li.appendChild(el('div', { class: 'pub__venue' }, e.venue));
 
     var meta = [];

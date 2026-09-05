@@ -7,6 +7,8 @@
  *
  * Entry fields (math):
  *   year, title, venue, pages, coauthors, manuscript (bool),
+ *   titleEn (optional) — English rendering of the title, shown under it on the EN side only
+ *                       (for Russian-only papers; Math-Net.Ru's translation of the title)
  *   kind ('article'|'book'|'thesis'|'abstract'|'preprint'),
  *   translation: { title, venue } | null   — the English-edition version of the same paper
  *   links:   [ { label, url } ]
@@ -15,6 +17,8 @@
  *            solely for the Springer edition of the 2002 paper (DOI 10.1023/A:1014914701477);
  *            Math-Net.Ru / zbMATH / MathSciNet come from person34113, api.zbmath.org and
  *            MR Author ID 641320; РИНЦ from the ИСТИНА profile (worker 178258660).
+ *            The 2026 Itogi Nauki i Tekhniki DOIs are printed in `venue` but not linked:
+ *            as of 2026-09-05 they did not resolve at doi.org yet (Math-Net.Ru pages do).
  *
  * Entry fields (priest):
  *   year (or null), date, group ('reports'|'articles'|'interviews'),
@@ -25,6 +29,26 @@
  */
 window.PUBLICATIONS = {
   math: [
+    {
+      year: 2026, kind: 'article',
+      title: 'Применение методов ресургентного анализа к исследованию асимптотик решений дифференциальных уравнений в окрестности их иррегулярных особых точек. II',
+      titleEn: 'Application of methods of resurgent analysis to the study of the asymptotics of solutions of differential equations in neighborhoods of their irregular singular points. II',
+      venue: 'Итоги науки и техники. Современная математика и её приложения. Тематические обзоры. Том 252 (Материалы Воронежской международной весенней математической школы «Понтрягинские чтения — XXXVII», часть 3). М.: ВИНИТИ, 2026, с. 17–33. DOI 10.36535/2782-4438-2026-252-17-33',
+      pages: 17, coauthors: 'Коровина М. В., Смирнов В. Ю.',
+      manuscript: false, translation: null,
+      links: [{ label: 'Math-Net.Ru', url: 'https://www.mathnet.ru/rus/into1451' }],
+      indexed: ['mathnet']
+    },
+    {
+      year: 2026, kind: 'article',
+      title: 'Применение методов ресургентного анализа к исследованию асимптотик решений дифференциальных уравнений в окрестности их иррегулярных особых точек. I',
+      titleEn: 'Application of methods of resurgent analysis to the study of the asymptotics of solutions of differential equations in neighborhoods of their irregular singular points. I',
+      venue: 'Итоги науки и техники. Современная математика и её приложения. Тематические обзоры. Том 251 (Материалы Воронежской международной весенней математической школы «Понтрягинские чтения — XXXVII», часть 2). М.: ВИНИТИ, 2026, с. 78–92. DOI 10.36535/2782-4438-2026-251-78-92',
+      pages: 15, coauthors: 'Коровина М. В., Смирнов В. Ю.',
+      manuscript: false, translation: null,
+      links: [{ label: 'Math-Net.Ru', url: 'https://www.mathnet.ru/rus/into1447' }],
+      indexed: ['mathnet']
+    },
     {
       year: 2025, kind: 'book',
       title: 'Дополнительные главы функционального анализа в примерах и задачах: учебник',
