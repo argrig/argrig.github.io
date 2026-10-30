@@ -19,8 +19,9 @@
  *            MR Author ID 641320; РИНЦ from the ИСТИНА profile (worker 178258660).
  *            The 2026 Itogi Nauki i Tekhniki DOIs are printed in `venue` but not linked:
  *            as of 2026-09-05 they did not resolve at doi.org yet (Math-Net.Ru pages do).
- *            Same for the 2026 MAKS Press textbook DOI (not resolving as of 2026-10-21);
- *            its titleEn is the official English title printed in the book itself.
+ *            The 2026 MAKS Press textbook DOI was registered with Crossref on 2026-10-22
+ *            (resolves to the PDF) and is linked like the 2025 one; its titleEn is the
+ *            official English title printed in the book itself.
  *
  * Entry fields (priest):
  *   year (or null), date, group ('reports'|'articles'|'interviews'),
@@ -35,9 +36,10 @@ window.PUBLICATIONS = {
       year: 2026, kind: 'book',
       title: 'Дополнительные главы анализа в примерах и задачах: учебник',
       titleEn: 'Additional Chapters of Analysis in Examples and Problems: textbook',
-      venue: 'М.: МАКС Пресс, 2026. — 176 с. — ISBN 978-5-317-07636-8. DOI 10.29003/m5416.978-5-317-07636-8',
+      venue: 'М.: МАКС Пресс, 2026. — 176 с. — ISBN 978-5-317-07636-8',
       pages: 176, coauthors: '', manuscript: false, translation: null,
       links: [
+        { label: 'DOI', url: 'https://doi.org/10.29003/m5416.978-5-317-07636-8' },
         { label: 'PDF', url: 'https://freeshell.de/ar/math/topology.pdf' },
         { label: 'НЭБ', url: 'https://rusneb.ru/catalog/000199_000009_015744302/' }
       ],
