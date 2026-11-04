@@ -183,7 +183,7 @@ window.PUBLICATIONS = {
       },
       links: [
         { label: 'PDF', url: 'https://kpfu.ru/portal/docs/F603979822/e03_8.pdf' },
-        { label: 'Math-Net.Ru', url: 'https://www.mathnet.ru/rus/person34113' },
+        { label: 'Math-Net.Ru', url: 'https://www.mathnet.ru/rus/ivm487' },
         { label: 'zbMATH', url: 'https://zbmath.org/2133870' },
         { label: 'MathSciNet', url: 'https://mathscinet.ams.org/mathscinet/article?mr=1657370' }
       ],
