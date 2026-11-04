@@ -1,11 +1,14 @@
 /* Hash router + renderer for the two-sided card.
  * Routes: #/priest/ru, #/priest/en, #/math/ru, #/math/en. Anything else → #/priest/ru.
  * Changing the hash is the only way state changes; the controls are plain links.
+ * Search engines ignore the hash, so the English version also has a crawlable address
+ * /?lang=en: without a valid hash it opens #/priest/en instead of #/priest/ru.
  */
 (function () {
   'use strict';
 
-  var DEFAULT_HASH = '#/priest/ru';
+  var SITE = 'https://argrig.github.io/';
+  var DEFAULT_HASH = /[?&]lang=en(&|$)/.test(location.search) ? '#/priest/en' : '#/priest/ru';
   var ROUTE_RE = /^#\/(priest|math)\/(ru|en)\/?$/;
   var FLIP_MS = 900;                 /* must be ≥ the CSS transition duration */
 
@@ -202,6 +205,17 @@
     if (changed && animate) window.scrollTo({ top: 0, behavior: reducedMotion() ? 'auto' : 'smooth' });
   }
 
+  /* ---------- <head> for search engines ---------- */
+  function setHeadMeta(lang) {
+    var c = byId('canonical'), d = byId('meta-desc');
+    if (!c) {
+      c = el('link', { id: 'canonical', rel: 'canonical' });
+      document.head.appendChild(c);
+    }
+    c.setAttribute('href', lang === 'en' ? SITE + '?lang=en' : SITE);
+    if (d) d.setAttribute('content', t(lang, 'meta.desc'));
+  }
+
   /* ---------- render ---------- */
   function render(s) {
     var langChanged = s.lang !== state.lang;
@@ -213,6 +227,7 @@
       renderPriest(s.lang);
     }
     document.title = t(s.lang, 'title.' + s.persona);
+    setHeadMeta(s.lang);
     updateControls(s);
     setFace(s.persona, !firstRender);
     firstRender = false;

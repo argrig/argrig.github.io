@@ -4,53 +4,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Протоиерей Арсений Григорянц — священник; Григорянц Армен Артемович — математик, Ереван</title>
-  <meta name="description" content="Протоиерей Арсений Григорянц — настоятель Покровского храма г. Еревана, секретарь Ереванско-Армянской епархии РПЦ. Григорянц Армен Артемович — к.ф.-м.н., филиал МГУ им. М.В. Ломоносова в Ереване: публикации, доклады, контакты.">
+  <title>Протоиерей Арсений (Армен) Григорянц — священник и математик</title>
+  <meta name="description" id="meta-desc" content="Протоиерей Арсений Григорянц — настоятель Покровского храма г. Еревана, секретарь Ереванско-Армянской епархии РПЦ. Григорянц Армен Артемович — к.ф.-м.н., филиал МГУ им. М.В. Ломоносова в Ереване: публикации, доклады, контакты.">
   <meta name="author" content="Армен (Арсений) Григорянц">
-  <link rel="canonical" href="https://argrig.github.io/">
+  <!-- rel=canonical depends on the language (/ or /?lang=en), so app.js adds it; Google wants the
+       raw and rendered canonical to agree, hence none here. hreflang below covers both versions. -->
+  <link rel="alternate" hreflang="ru" href="https://argrig.github.io/">
+  <link rel="alternate" hreflang="en" href="https://argrig.github.io/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://argrig.github.io/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / соцсети -->
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Арсений (Армен) Григорянц">
   <meta property="og:url" content="https://argrig.github.io/">
   <meta property="og:title" content="Протоиерей Арсений (Армен) Григорянц — священник и математик">
   <meta property="og:description" content="Настоятель Покровского храма г. Еревана; к.ф.-м.н., филиал МГУ им. М.В. Ломоносова в Ереване.">
-  <meta property="og:image" content="https://argrig.github.io/me-real.webp">
+  <meta property="og:image" content="https://argrig.github.io/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Протоиерей Арсений Григорянц / Григорянц Армен Артемович — визитка">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
-  <meta name="twitter:card" content="summary">
+  <meta property="profile:first_name" content="Армен">
+  <meta property="profile:last_name" content="Григорянц">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Протоиерей Арсений (Армен) Григорянц — священник и математик">
+  <meta name="twitter:description" content="Настоятель Покровского храма г. Еревана; к.ф.-м.н., филиал МГУ им. М.В. Ломоносова в Ереване.">
+  <meta name="twitter:image" content="https://argrig.github.io/og.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Структурированные данные для Google/Яндекса -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Григорянц Армен Артемович",
-    "alternateName": ["Протоиерей Арсений Григорянц", "Archpriest Arseny Grigoryants", "Armen Grigoryants", "Арсений Григорянц"],
-    "url": "https://argrig.github.io/",
-    "image": "https://argrig.github.io/me-real.webp",
-    "jobTitle": ["Настоятель Покровского храма г. Еревана", "Секретарь Ереванско-Армянской епархии", "Кандидат физико-математических наук"],
-    "affiliation": [
-      {"@type": "CollegeOrUniversity", "name": "Филиал МГУ имени М.В. Ломоносова в городе Ереване"},
-      {"@type": "Organization", "name": "Ереванско-Армянская епархия Русской Православной Церкви"}
-    ],
-    "address": {"@type": "PostalAddress", "addressLocality": "Ереван", "addressCountry": "AM"},
-    "telephone": "+37494888654",
-    "knowsAbout": ["коммутативная алгебра", "дифференциальная геометрия", "теория категорий", "теория корректирующих кодов", "основания математики", "нестандартный анализ", "богословие"],
-    "sameAs": [
-      "https://www.mathnet.ru/rus/person34113",
-      "https://zbmath.org/?q=au%3AGrigoryants%2C+A",
-      "https://mathscinet.ams.org/mathscinet/MRAuthorID/641320",
-      "https://istina.msu.ru/workers/178258660/all/",
-      "https://arxiv.org/a/grigoryants_a_1",
-      "https://www.youtube.com/@ar.grig8",
-      "https://t.me/argrig7",
-      "https://github.com/argrig"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://argrig.github.io/#page",
+        "url": "https://argrig.github.io/",
+        "name": "Протоиерей Арсений (Армен) Григорянц — священник и математик",
+        "inLanguage": ["ru", "en"],
+        "dateModified": "2026-11-04",
+        "mainEntity": { "@id": "https://argrig.github.io/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://argrig.github.io/#person",
+        "name": "Григорянц Армен Артемович",
+        "givenName": "Армен",
+        "additionalName": "Артемович",
+        "familyName": "Григорянц",
+        "honorificPrefix": "Протоиерей",
+        "alternateName": ["Протоиерей Арсений Григорянц", "Арсений Григорянц", "Армен Григорянц", "Григорьянц Армен Артемович", "Archpriest Arseny Grigoryants", "Armen Grigoryants", "Armen A. Grigoryants", "A. A. Grigoryants"],
+        "description": "Протоиерей Русской Православной Церкви, настоятель Покровского храма г. Еревана, секретарь Ереванско-Армянской епархии; математик, кандидат физико-математических наук, филиал МГУ имени М.В. Ломоносова в Ереване.",
+        "url": "https://argrig.github.io/",
+        "image": ["https://argrig.github.io/me-real.webp", "https://argrig.github.io/og.jpg"],
+        "jobTitle": ["Настоятель Покровского храма г. Еревана", "Секретарь Ереванско-Армянской епархии", "Благочинный Ереванского округа", "Доцент филиала МГУ имени М.В. Ломоносова в городе Ереване"],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "Кандидат физико-математических наук",
+          "alternateName": "Candidate of Sciences in Physics and Mathematics (PhD)"
+        },
+        "worksFor": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Филиал МГУ имени М.В. Ломоносова в городе Ереване",
+            "alternateName": "Lomonosov Moscow State University, Yerevan Branch",
+            "address": {"@type": "PostalAddress", "streetAddress": "ул. Вардананц, 17", "addressLocality": "Ереван", "addressCountry": "AM"}
+          },
+          {
+            "@type": "Organization",
+            "name": "Ереванско-Армянская епархия Русской Православной Церкви",
+            "alternateName": "Diocese of Yerevan and Armenia, Russian Orthodox Church"
+          }
+        ],
+        "address": {"@type": "PostalAddress", "addressLocality": "Ереван", "addressCountry": "AM"},
+        "telephone": "+37494888654",
+        "email": ["ar.grig8@gmail.com", "ar.grig7@gmail.com"],
+        "knowsLanguage": ["ru", "en"],
+        "knowsAbout": ["коммутативная алгебра", "дифференциальная геометрия", "теория категорий", "теория корректирующих кодов", "основания математики", "нестандартный анализ", "богословие", "commutative algebra", "differential geometry", "category theory", "error-correcting codes", "foundations of mathematics", "non-standard analysis", "theology"],
+        "sameAs": [
+          "https://www.mathnet.ru/rus/person34113",
+          "https://zbmath.org/authors/grigoryants.a-a",
+          "https://zbmath.org/authors/grigoryants.armen",
+          "https://mathscinet.ams.org/mathscinet/MRAuthorID/641320",
+          "https://istina.msu.ru/workers/178258660/all/",
+          "https://arxiv.org/a/grigoryants_a_1",
+          "https://www.youtube.com/@ar.grig8",
+          "https://t.me/argrig7",
+          "https://github.com/argrig"
+        ],
+        "subjectOf": [
+          {"@type": "Article", "name": "«Семья должна стать субъектом права!» — интервью", "datePublished": "2019-12-12", "url": "https://pravoslavie.fm/interview/protoierej-arsenij-grigoryancz-semya-dolzhna-stat-subektom-prava/"},
+          {"@type": "Article", "name": "«Не отчуждайтесь!»", "datePublished": "2018-01-29", "url": "https://pravoslavie.ru/110218.html"},
+          {"@type": "Article", "name": "Понять Армению: о христианстве, протестах в Ереване и том, ради чего стоит выходить на митинг — интервью", "datePublished": "2015-07-22", "url": "https://www.pravmir.ru/protoierey-arseniy-grigoryants-pravoslavie-v-armenii-osobennosti-zhizni-v-menshinstve/"}
+        ]
+      }
     ]
   }
   </script>
   <link href="bootstrap5.2.3/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <noscript>
     <style>
       .card3d { display: block; }
@@ -90,7 +149,7 @@
           <div class="hero">
           <div class="row align-items-center">
             <div class="col-5 col-sm-2 order-1 text-center mb-2 mb-sm-0">
-              <img class="img-fluid hero__symbol" src="cross.png" data-i18n-alt="p.alt.cross" alt="Православный крест">
+              <img class="img-fluid hero__symbol" src="cross.webp" data-i18n-alt="p.alt.cross" alt="Православный крест">
             </div>
             <div class="col-12 col-sm-7 col-md-6 order-3 order-sm-2 text-center text-sm-start priest__text">
               <h2 class="priest__org">
@@ -98,10 +157,10 @@
                 <span class="priest__org-2" data-i18n="p.patriarchate">МОСКОВСКИЙ ПАТРИАРХАТ</span><br>
                 <span class="priest__org-3" data-i18n="p.diocese">ЕРЕВАНСКО-АРМЯНСКАЯ ЕПАРХИЯ</span>
               </h2>
-              <h2 class="my-4 fw-bold priest__name">
+              <h1 class="my-4 fw-bold priest__name">
                 <span data-i18n="p.rank">ПРОТОИЕРЕЙ</span><br>
                 <span data-i18n="p.name">Арсений Григорянц</span>
-              </h2>
+              </h1>
               <h3 class="priest__positions">
                 <span data-i18n="p.pos1">Секретарь епархии</span><br>
                 <span data-i18n="p.pos2">Благочинный Ереванского округа</span><br>
@@ -127,7 +186,16 @@
 
           <section class="pubs panel" aria-labelledby="priest-pubs-h">
             <h2 id="priest-pubs-h" class="pubs__h" data-i18n="p.pubs.h">Доклады и публикации</h2>
-            <div id="priest-pubs"></div>
+            <div id="priest-pubs"><!-- prerender:priest-pubs --><ol class="pub-list">
+<li class="pub"><div class="pub__title"><span class="pub__year">2019</span><a class="pub__title-link" href="https://pravoslavie.fm/interview/protoierej-arsenij-grigoryancz-semya-dolzhna-stat-subektom-prava/" target="_blank" rel="noopener">«Семья должна стать субъектом права!»</a><span class="ix ix--kind">интервью</span></div><div class="pub__venue">Интервью, беседовал Андрей Сегеда. Православие.fm, 12 декабря 2019 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2018</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/semya-osnova-tsennostey" target="_blank" rel="noopener">Семья — основа традиционной системы ценностей</a><span class="ix ix--kind">доклад</span></div><div class="pub__venue">Доклад на XXVI Международных Рождественских образовательных чтениях «Нравственные ценности и будущее человечества». Москва, 24–26 января 2018 г.</div><div class="pub__tags"><span class="pub__label">См. также:</span><a class="pub__link" href="https://pravoslavie.ru/110218.html" target="_blank" rel="noopener">«Не отчуждайтесь!» — Православие.Ru, 29.01.2018</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2016</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/vrns-20-rol-rossii" target="_blank" rel="noopener">Роль России на мировой арене: на страже традиционных ценностей</a><span class="ix ix--kind">доклад</span></div><div class="pub__venue">Доклад на XX Всемирном русском народном соборе «Россия и Запад: диалог народов в поисках ответов на цивилизационные вызовы». Москва, 1 ноября 2016 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2015</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/vrns-19-o-vere-i-nauke" target="_blank" rel="noopener">О вере и науке</a><span class="ix ix--kind">доклад</span></div><div class="pub__venue">Доклад на XIX Всемирном русском народном соборе «Наследие князя Владимира и судьбы исторической Руси». Москва, 10 ноября 2015 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2015</span><a class="pub__title-link" href="https://www.pravmir.ru/protoierey-arseniy-grigoryants-pravoslavie-v-armenii-osobennosti-zhizni-v-menshinstve/" target="_blank" rel="noopener">Понять Армению: о христианстве, протестах в Ереване и том, ради чего стоит выходить на митинг</a><span class="ix ix--kind">интервью</span></div><div class="pub__venue">Интервью, беседовала Дарья Менделеева. Правмир, 22 июля 2015 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2014</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/russkie-narod-tsivilizatsiya" target="_blank" rel="noopener">К обсуждению Декларации русской идентичности. Русские: народ-цивилизация</a><span class="ix ix--kind">статья</span></div><div class="pub__venue">Статья, декабрь 2014 г. — отклик на Декларацию русской идентичности, принятую XVIII Всемирным русским народным собором 11 ноября 2014 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2012</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/vrns-16-natsionalnaya-ideya" target="_blank" rel="noopener">Концепция цивилизаций и национальная идея</a><span class="ix ix--kind">доклад</span></div><div class="pub__venue">Доклад на XVI Всемирном русском народном соборе «Рубежи истории — рубежи России». Москва, 1–2 октября 2012 г.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">без даты</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/tsivilizatsiya-kultura-etnos" target="_blank" rel="noopener">Цивилизация, культура, этнос</a><span class="ix ix--kind">статья</span></div><div class="pub__venue">Программный текст Русского народного собора в Армении</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">без даты</span><a class="pub__title-link" href="https://rnsa.armeparchy.org/ideology/dlya-kogo-i-dlya-chego-sozdan-rnsa" target="_blank" rel="noopener">Для кого и для чего создан РНСА?</a><span class="ix ix--kind">статья</span></div><div class="pub__venue">Программный текст Русского народного собора в Армении</div></li></ol><!-- /prerender:priest-pubs --></div>
           </section>
 
           <p class="flip-link-wrap">
@@ -163,7 +231,7 @@
                 </h4>
               </div>
               <div class="col-7 col-sm-3 order-2 order-sm-3 text-center">
-                <img class="img-fluid hero__portrait" src="me_cartoon_transparent.png" data-i18n-alt="m.alt.photo" alt="Григорянц Армен Артемович">
+                <img class="img-fluid hero__portrait" src="me_cartoon_transparent.webp" data-i18n-alt="m.alt.photo" alt="Григорянц Армен Артемович">
               </div>
             </div>
           </div>
@@ -171,7 +239,12 @@
           <section class="pubs panel math__details">
             <section aria-labelledby="m-int-h">
               <h2 id="m-int-h" class="panel__h" data-i18n="m.interests.h">Научные интересы</h2>
-              <ul class="chips" id="math-interests"></ul>
+              <ul class="chips" id="math-interests"><!-- prerender:math-interests --><li class="chip">коммутативная алгебра</li>
+<li class="chip">дифференциальная геометрия</li>
+<li class="chip">теория категорий</li>
+<li class="chip">теория корректирующих кодов</li>
+<li class="chip">основания математики</li>
+<li class="chip">нестандартный анализ</li><!-- /prerender:math-interests --></ul>
             </section>
 
             <section aria-labelledby="m-p-h">
@@ -187,8 +260,28 @@
 
             <section aria-labelledby="m-pub-h">
               <h2 id="m-pub-h" class="panel__h" data-i18n="m.pubs.h">Публикации</h2>
-              <p class="legend" data-i18n="m.pubs.legend"></p>
-              <div id="math-pubs"></div>
+              <p class="legend" id="math-legend" data-i18n="m.pubs.legend"><!-- prerender:math-legend -->Отметки показывают, где работа проиндексирована: Scopus, Web of Science, РИНЦ, Math-Net.Ru, zbMATH, MathSciNet.<!-- /prerender:math-legend --></p>
+              <div id="math-pubs"><!-- prerender:math-pubs --><ol class="pub-list">
+<li class="pub"><div class="pub__title"><span class="pub__year">2026</span><span>Дополнительные главы анализа в примерах и задачах: учебник</span></div><div class="pub__venue">М.: МАКС Пресс, 2026. — 176 с. — ISBN 978-5-317-07636-8</div><div class="pub__meta">176 с.</div><div class="pub__tags"><span class="ix ix--kind">учебник</span><a class="pub__link" href="https://doi.org/10.29003/m5416.978-5-317-07636-8" target="_blank" rel="noopener">DOI</a><a class="pub__link" href="https://freeshell.de/ar/math/topology.pdf" target="_blank" rel="noopener">PDF</a><a class="pub__link" href="https://rusneb.ru/catalog/000199_000009_015744302/" target="_blank" rel="noopener">НЭБ</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2026</span><span>Применение методов ресургентного анализа к исследованию асимптотик решений дифференциальных уравнений в окрестности их иррегулярных особых точек. II</span></div><div class="pub__venue">Итоги науки и техники. Современная математика и её приложения. Тематические обзоры. Том 252 (Материалы Воронежской международной весенней математической школы «Понтрягинские чтения — XXXVII», часть 3). М.: ВИНИТИ, 2026, с. 17–33. DOI 10.36535/2782-4438-2026-252-17-33</div><div class="pub__meta">17 с. · Соавторы: Коровина М. В., Смирнов В. Ю.</div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><a class="pub__link" href="https://www.mathnet.ru/rus/into1451" target="_blank" rel="noopener">Math-Net.Ru</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2026</span><span>Применение методов ресургентного анализа к исследованию асимптотик решений дифференциальных уравнений в окрестности их иррегулярных особых точек. I</span></div><div class="pub__venue">Итоги науки и техники. Современная математика и её приложения. Тематические обзоры. Том 251 (Материалы Воронежской международной весенней математической школы «Понтрягинские чтения — XXXVII», часть 2). М.: ВИНИТИ, 2026, с. 78–92. DOI 10.36535/2782-4438-2026-251-78-92</div><div class="pub__meta">15 с. · Соавторы: Коровина М. В., Смирнов В. Ю.</div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><a class="pub__link" href="https://www.mathnet.ru/rus/into1447" target="_blank" rel="noopener">Math-Net.Ru</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2025</span><span>Дополнительные главы функционального анализа в примерах и задачах: учебник</span></div><div class="pub__venue">М.: МАКС Пресс, 2025. — 188 с. — ISBN 978-5-317-07491-3</div><div class="pub__meta">188 с. · Соавторы: Коровина М. В., Григорянц С. А., Смирнов И. Н., Аристов А. И.</div><div class="pub__tags"><span class="ix ix--kind">учебник</span><span class="ix ix--rsci" title="Индексируется в РИНЦ (eLibrary.ru)">РИНЦ</span><a class="pub__link" href="https://doi.org/10.29003/m4823.978-5-317-07491-3" target="_blank" rel="noopener">DOI</a><a class="pub__link" href="https://istina.msu.ru/workers/178258660/publications/" target="_blank" rel="noopener">ИСТИНА</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2020</span><span>On the model of hyperrational numbers with selective ultrafilter</span></div><div class="pub__venue">arXiv:2004.01674 [math.LO], 2020 (earlier version: Preprints.org, 2019)</div><div class="pub__tags"><span class="ix ix--kind">препринт</span><span class="ix ix--zbmath" title="Реферируется в zbMATH Open">zbMATH</span><a class="pub__link" href="https://arxiv.org/abs/2004.01674" target="_blank" rel="noopener">arXiv</a><a class="pub__link" href="https://doi.org/10.20944/preprints201902.0273.v1" target="_blank" rel="noopener">Preprints.org</a><a class="pub__link" href="https://zbmath.org/900426765" target="_blank" rel="noopener">zbMATH</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2011</span><span>О конфигурационных комплексах семейства подпространств линейного пространства</span></div><div class="pub__venue">Российско-Армянский (Славянский) университет. Вестник. Физико-математические и естественные науки. № 2, 2011 г., с. 9–18</div><div class="pub__meta">10 с.</div><div class="pub__tags"><span class="ix ix--rsci" title="Индексируется в РИНЦ (eLibrary.ru)">РИНЦ</span><a class="pub__link" href="https://istina.msu.ru/workers/178258660/publications/" target="_blank" rel="noopener">ИСТИНА</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2003</span><span>Об одном новом классе двоичных кодов, исправляющих ошибки</span></div><div class="pub__venue">Известия НАН Армении. Математика. Том 38, № 2, 2003 г., с. 29–36</div><div class="pub__meta">8 с.</div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><span class="ix ix--zbmath" title="Реферируется в zbMATH Open">zbMATH</span><a class="pub__link" href="https://www.mathnet.ru/rus/person34113" target="_blank" rel="noopener">Math-Net.Ru</a><a class="pub__link" href="https://zbmath.org/5546078" target="_blank" rel="noopener">zbMATH</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2003</span><span>Об одном случае достижимости границы расстояния для фрактальных кодов</span></div><div class="pub__venue">Доклады НАН Армении. Математика. Том 103, № 3, 2003 г., с. 216–220</div><div class="pub__meta">5 с.</div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><a class="pub__link" href="https://www.mathnet.ru/rus/person34113" target="_blank" rel="noopener">Math-Net.Ru</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2003</span><span>On a new class of binary error correcting codes</span></div><div class="pub__venue">Journal of Contemporary Mathematical Analysis (Armenian Academy of Sciences). Vol. 38, № 2, 2003, pp. 26–34</div><div class="pub__meta">9 с.</div><div class="pub__tags"><span class="ix ix--zbmath" title="Реферируется в zbMATH Open">zbMATH</span><a class="pub__link" href="https://zbmath.org/5546078" target="_blank" rel="noopener">zbMATH</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2003</span><span>On a case of fractal codes distance upper boundary reaching</span></div><div class="pub__venue">National Academy of Sciences of Armenia. Reports. Mathematics. Vol. 103, № 3, 2003</div><div class="pub__meta">5 с.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2002</span><span>Определение фенольных альдегидов в коньяках и винах методом капиллярного электрофореза: новые маркеры качества коньяка</span></div><div class="pub__venue">Журнал аналитической химии. 2002, том 57, № 4, с. 422–428</div><div class="pub__meta">7 с. · Соавторы: Паносян А. Г., Мамиконян Г., Оганесян А. и др.</div><div class="pub__translation"><span class="pub__label">Английская версия: </span><span>Determination of phenolic aldehydes in cognacs and wines by capillary electrophoresis: new cognac quality markers. Journal of Analytical Chemistry, 57:4 (2002), pp. 356–361 (Panosyan A. G., Mamikonyan G., Torosyan M., Abramyan A., Oganesyan A., Gabrielyan E. S., Grigoryants A., Mkhitaryan S., Lapin B. V.)</span></div><div class="pub__tags"><span class="ix ix--scopus" title="Индексируется в Scopus">Scopus</span><span class="ix ix--wos" title="Индексируется в Web of Science">Web of Science</span><span class="ix ix--rsci" title="Индексируется в РИНЦ (eLibrary.ru)">РИНЦ</span><a class="pub__link" href="https://doi.org/10.1023/A:1014914701477" target="_blank" rel="noopener">DOI</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2002</span><span>Determination of an apparent age of brandy using phenolic aldehydes as markers</span></div><div class="pub__venue">ISAAC Conference on Complex Analysis, Differential Equations and Related Topics, September 17–21, 2002, Yerevan, p. 25</div><div class="pub__meta">1 с.</div><div class="pub__tags"><span class="ix ix--kind">тезисы</span></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">2001</span><span>Определение возраста коньяка путем анализа содержания фенольных альдегидов</span></div><div class="pub__venue">Лекарства и медицина. № 3. Ереван, 2001 г., с. 53–60</div><div class="pub__meta">8 с. · Соавторы: Торосян М., Паносян А. Г., Абрамян А. и др.</div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1999</span><span>Тензорное и дифференциальное исчисление в категориях и их применение в теории дифференциальных уравнений в частных производных</span></div><div class="pub__venue">Диссертация на соискание учёной степени кандидата физико-математических наук (01.01.02, 01.01.04), ЕГУ, октябрь 1999 г. Научные руководители: С. Г. Далалян, И. А. Мирзоян</div><div class="pub__meta">70 с.</div><div class="pub__tags"><span class="ix ix--kind">рукопись</span><a class="pub__link" href="https://istina.msu.ru/workers/178258660/all/" target="_blank" rel="noopener">ИСТИНА</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1999</span><span>Тензорное и дифференциальное исчисление в категориях и их применение в теории дифференциальных уравнений в частных производных</span></div><div class="pub__venue">Автореферат диссертации, ЕГУ, октябрь 1999 г.</div><div class="pub__meta">15 с.</div><div class="pub__tags"><span class="ix ix--kind">рукопись</span></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1998</span><span>Об одной интерпретации тензора кручения связности</span></div><div class="pub__venue">Известия вузов. Математика. 1998, № 8 (435), с. 22–28</div><div class="pub__meta">7 с.</div><div class="pub__translation"><span class="pub__label">Английская версия: </span><span>On an interpretation of the torsion tensor of a connection. Russian Mathematics (Iz. VUZ), 42:8 (1998), pp. 20–26</span></div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><span class="ix ix--zbmath" title="Реферируется в zbMATH Open">zbMATH</span><span class="ix ix--mathscinet" title="Реферируется в MathSciNet (Mathematical Reviews)">MathSciNet</span><span class="ix ix--rsci" title="Индексируется в РИНЦ (eLibrary.ru)">РИНЦ</span><a class="pub__link" href="https://kpfu.ru/portal/docs/F603979822/e03_8.pdf" target="_blank" rel="noopener">PDF</a><a class="pub__link" href="https://www.mathnet.ru/rus/person34113" target="_blank" rel="noopener">Math-Net.Ru</a><a class="pub__link" href="https://zbmath.org/2133870" target="_blank" rel="noopener">zbMATH</a><a class="pub__link" href="https://mathscinet.ams.org/mathscinet/article?mr=1657370" target="_blank" rel="noopener">MathSciNet</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1998</span><span>Локальные свойства дифференциальных операторов в категории модулей</span></div><div class="pub__venue">Известия НАН Армении. Математика. Том 33, № 5, 1998 г., с. 22–29</div><div class="pub__meta">8 с.</div><div class="pub__translation"><span class="pub__label">Английская версия: </span><span>Local properties of differential operators in categories of modules. Journal of Contemporary Mathematical Analysis (Armenian Academy of Sciences), 33:5 (1998), pp. 1–8</span></div><div class="pub__tags"><span class="ix ix--mathnet" title="Есть в Math-Net.Ru">Math-Net.Ru</span><span class="ix ix--zbmath" title="Реферируется в zbMATH Open">zbMATH</span><a class="pub__link" href="https://www.mathnet.ru/rus/person34113" target="_blank" rel="noopener">Math-Net.Ru</a><a class="pub__link" href="https://zbmath.org/1586201" target="_blank" rel="noopener">zbMATH</a></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1998</span><span>Локальные свойства дифференциальных операторов в категории модулей</span></div><div class="pub__venue">Международная школа-семинар по геометрии и анализу памяти Н. В. Ефимова. Абрау-Дюрсо, 5–11 сентября 1998 г. Тезисы докл., с. 188–189</div><div class="pub__meta">2 с.</div><div class="pub__tags"><span class="ix ix--kind">тезисы</span></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1997</span><span>Тензорные произведения в категориях</span></div><div class="pub__venue">Международный геометрический семинар имени Н. И. Лобачевского. Казань, 4–6 февраля 1997 г. Тезисы докл., с. 37</div><div class="pub__meta">1 с.</div><div class="pub__tags"><span class="ix ix--kind">тезисы</span></div></li>
+<li class="pub"><div class="pub__title"><span class="pub__year">1996</span><span>О тензоре кручения</span></div><div class="pub__venue">Международная геометрическая школа-семинар памяти Н. В. Ефимова. Абрау-Дюрсо, 27 сент. – 4 окт. 1996 г. Тезисы докл., с. 13–14</div><div class="pub__meta">2 с.</div><div class="pub__tags"><span class="ix ix--kind">тезисы</span></div></li></ol><!-- /prerender:math-pubs --></div>
             </section>
           </section>
 
@@ -202,9 +295,9 @@
   </main>
 
   <script src="bootstrap5.2.3/js/bootstrap.bundle.min.js"></script>
-  <script src="i18n.js?v=10"></script>
-  <script src="publications.js?v=10"></script>
-  <script src="app.js?v=10"></script>
+  <script src="i18n.js?v=11"></script>
+  <script src="publications.js?v=11"></script>
+  <script src="app.js?v=11"></script>
 </body>
 
 </html>

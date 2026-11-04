@@ -17,8 +17,10 @@ window.I18N = {
     'ctl.flip': 'Перевернуть ↻',
 
     /* document titles */
-    'title.priest': 'Протоиерей Арсений Григорянц — священник; Григорянц Армен Артемович — математик, Ереван',
-    'title.math': 'Григорянц Армен Артемович — математик',
+    'title.priest': 'Протоиерей Арсений (Армен) Григорянц — священник и математик',
+    'title.math': 'Григорянц Армен Артемович — математик, к.ф.-м.н., МГУ в Ереване',
+    /* <meta name="description">, set per language for search engines that render JS */
+    'meta.desc': 'Протоиерей Арсений Григорянц — настоятель Покровского храма г. Еревана, секретарь Ереванско-Армянской епархии РПЦ. Григорянц Армен Артемович — к.ф.-м.н., филиал МГУ им. М.В. Ломоносова в Ереване: публикации, доклады, контакты.',
 
     /* contacts */
     'c.tg': 'Telegram',
@@ -95,8 +97,9 @@ window.I18N = {
     'ctl.flip': 'Flip the card ↻',
 
     /* document titles */
-    'title.priest': 'Archpriest Arseny Grigoryants',
-    'title.math': 'Armen Artemovich Grigoryants — Mathematician',
+    'title.priest': 'Archpriest Arseny (Armen) Grigoryants — priest and mathematician',
+    'title.math': 'Armen Grigoryants — mathematician, Lomonosov MSU Yerevan Branch',
+    'meta.desc': 'Archpriest Arseny Grigoryants — rector of the Intercession Church in Yerevan, secretary of the Diocese of Yerevan and Armenia (Russian Orthodox Church). Armen Grigoryants — mathematician, Lomonosov Moscow State University Yerevan Branch: publications, talks, contacts.',
 
     /* contacts */
     'c.tg': 'Telegram',
